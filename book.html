@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Ground — Futsol Arena</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>FUTSOL ARENA</a>
+    <div class="nav-links">
+      <a href="index.html#why">Why Us</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="admin.html" class="btn btn-ghost">Admin</a>
+    </div>
+    <button class="menu-btn">☰</button>
+  </div>
+</nav>
+
+<header class="book-hero">
+  <div class="wrap">
+    <p class="eyebrow on-dark">Book Ground</p>
+    <h1 style="font-size:clamp(32px,5vw,48px);text-transform:uppercase;">Pick a sport, pick an hour.</h1>
+
+    <div class="selector-row" id="sportRow"></div>
+    <div class="selector-row" id="dateRow"></div>
+    <div class="selector-row" id="durationRow"></div>
+  </div>
+</header>
+
+<section style="padding-top:40px;">
+  <div class="wrap">
+    <div class="legend">
+      <span><span class="dot-sw" style="background:var(--status-available)"></span>Available</span>
+      <span><span class="dot-sw" style="background:var(--status-booked)"></span>Booked</span>
+      <span><span class="dot-sw" style="background:var(--status-pending)"></span>Pending payment</span>
+      <span><span class="dot-sw" style="background:var(--status-past)"></span>Past</span>
+    </div>
+    <div class="slot-board" id="slotBoard"></div>
+  </div>
+</section>
+
+<!-- Booking modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h3>Confirm your slot</h3>
+    <p class="sub">Fill in your details — we'll pre-fill your WhatsApp message.</p>
+
+    <form id="bookingForm">
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" id="fName" required placeholder="e.g. Haris Ahmed">
+      </div>
+      <div class="field">
+        <label>Phone number</label>
+        <input type="tel" id="fPhone" required placeholder="03XX XXXXXXX">
+      </div>
+      <div class="field">
+        <label>Email (optional)</label>
+        <input type="email" id="fEmail" placeholder="you@email.com">
+      </div>
+
+      <div class="summary-box" id="summaryBox"></div>
+
+      <button type="submit" class="btn wa-btn">Proceed to WhatsApp →</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Futsol Arena.</span>
+    <span><a href="index.html">Home</a> · <a href="admin.html">Admin</a></span>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/923117224159?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20booking%20a%20ground%20at%20Futsol%20Arena." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.383 3 4 8.383 4 15.001c0 2.386.703 4.61 1.912 6.484L4 29l7.694-1.885A11.94 11.94 0 0 0 16 27c6.618 0 12-5.383 12-12.001C28 8.383 22.619 3 16.001 3zm0 21.75a9.72 9.72 0 0 1-4.955-1.352l-.355-.21-4.566 1.119 1.148-4.449-.231-.365A9.716 9.716 0 0 1 5.75 15C5.75 9.34 10.34 4.75 16 4.75S26.25 9.34 26.25 15 21.66 24.75 16.001 24.75zm5.4-7.32c-.294-.147-1.74-.858-2.01-.956-.27-.098-.467-.147-.664.147-.196.294-.76.956-.933 1.152-.171.196-.343.221-.637.074-.294-.147-1.241-.457-2.364-1.458-.874-.78-1.464-1.744-1.636-2.038-.171-.294-.018-.453.129-.6.132-.132.294-.343.441-.514.147-.171.196-.294.294-.49.098-.196.049-.368-.024-.514-.074-.147-.664-1.6-.91-2.192-.24-.577-.484-.499-.664-.508-.171-.008-.368-.01-.564-.01-.196 0-.514.074-.784.368-.27.294-1.03 1.006-1.03 2.454 0 1.448 1.055 2.847 1.202 3.043.147.196 2.077 3.172 5.033 4.447.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.74-.711 1.986-1.398.246-.687.246-1.276.172-1.398-.073-.123-.27-.196-.564-.343z"/></svg>
+</a>
+
+<script src="js/app.js"></script>
+<script src="js/booking.js"></script>
+<script>
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+if(menuBtn && navLinks){
+  menuBtn.addEventListener('click', ()=> navLinks.classList.toggle('mobile-open'));
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> navLinks.classList.remove('mobile-open'));
+  });
+}
+</script>
+</body>
+</html>

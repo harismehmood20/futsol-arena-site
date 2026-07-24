@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Futsol Arena</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <aside class="admin-side">
+    <div class="brand"><span class="dot"></span>FUTSOL ARENA</div>
+    <nav class="admin-nav">
+      <a href="#" class="active">📊 Dashboard</a>
+      <a href="#bookings-panel">📋 Bookings</a>
+      <a href="#revenue-panel">💰 Revenue</a>
+      <a href="#slot-panel">🎛 Slot Management</a>
+      <a href="book.html">🌐 View Booking Page</a>
+      <a href="index.html">← Back to Site</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <p class="eyebrow">Admin Dashboard</p>
+        <h2 style="font-size:28px;">Today's overview</h2>
+      </div>
+      <button class="btn btn-dark" id="resetDemo">Reset demo data</button>
+    </div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="panel" id="bookings-panel">
+      <h3>Manage bookings</h3>
+      <input type="text" id="searchBox" placeholder="Search by name or phone…"
+        style="width:100%;max-width:320px;padding:10px 14px;border-radius:8px;border:1.5px solid var(--line);margin-bottom:16px;font-family:var(--body);">
+      <div style="overflow-x:auto;">
+        <table class="data" id="bookingsTable">
+          <thead>
+            <tr><th>ID</th><th>Customer</th><th>Sport</th><th>Date</th><th>Time</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="bookingsBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyState" style="display:none;">No bookings yet — they'll appear here once a customer books a slot.</div>
+    </div>
+
+    <div class="panel" id="revenue-panel">
+      <h3>Revenue</h3>
+      <div class="stat-grid" style="margin-bottom:0;" id="revenueGrid"></div>
+    </div>
+
+    <div class="panel" id="slot-panel">
+      <h3>Slot & pricing management</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="margin-bottom:10px;">Base pricing</h3>
+          <p>Standard: <b id="pStd"></b> · Weekend: <b id="pWknd"></b> · Night: <b id="pNight"></b></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px;">Holiday mode</h3>
+          <p>Close the ground for maintenance or a holiday. (Demo toggle — wire to your backend to actually block dates.)</p>
+          <button class="btn btn-ghost" style="margin-top:12px;">Enable holiday mode</button>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px;">Block a slot</h3>
+          <p>Owners can manually block any hour from the Book Ground page by setting it aside in the schedule.</p>
+          <a href="book.html" class="btn btn-ghost" style="margin-top:12px;display:inline-block;">Open booking board</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
