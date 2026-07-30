@@ -1,7 +1,7 @@
 # futsol-arena-site
 A responsive booking website for a football and cricket ground rental business. Visitors can check live slot availability for the next 7 days, pick a 1-hour or 2-hour slot, and confirm their booking directly over WhatsApp — no backend, no sign-up, no phone calls.
 
-Live demo: https://futsolarenapk.netlify.app/
+Live demo: https://harismehmood20.github.io/futsol-arena-site/
 
 Features
 Live 7-day booking board — every hour from midnight to midnight, marked available, booked, pending, or past, for both Football and Cricket.
